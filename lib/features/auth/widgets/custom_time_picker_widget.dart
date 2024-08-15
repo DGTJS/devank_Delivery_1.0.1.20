@@ -20,7 +20,7 @@ class CustomTimePickerWidget extends StatelessWidget {
     for(int i = 1; i <= 60 ; i++){
       time.add(i.toString());
     }
-    List<String> unit = ['minute', 'hours', 'days'];
+    List<String> unit = ['Minutos', 'Horas', 'Dias'];
 
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.radiusExtraLarge)),
@@ -71,7 +71,7 @@ class CustomTimePickerWidget extends StatelessWidget {
                       SizedBox(
                         width: 70,
                         child: Text(
-                          'unit'.tr,
+                          'Tempo'.tr,
                           style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge,color: Theme.of(context).disabledColor),
                           textAlign: TextAlign.center,
                         ),

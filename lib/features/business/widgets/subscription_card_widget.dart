@@ -80,7 +80,7 @@ class SubscriptionCardWidget extends StatelessWidget {
         style: robotoBold.copyWith(fontSize: 35, color: color),
       ),
 
-      Text('${package.validity} ' 'days'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall)),
+      Text('${package.validity} ' 'Dias', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall)),
       const SizedBox(height: Dimensions.paddingSizeDefault),
 
       Divider(color: color, indent: 70, endIndent: 70, thickness: 2),

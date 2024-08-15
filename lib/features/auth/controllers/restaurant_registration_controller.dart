@@ -44,7 +44,7 @@ class RestaurantRegistrationController extends GetxController implements GetxSer
   String _storeMaxTime = '--';
   String get storeMaxTime => _storeMaxTime;
 
-  String _storeTimeUnit = 'minute';
+  String _storeTimeUnit = 'Minutos';
   String get storeTimeUnit => _storeTimeUnit;
 
   // bool _showPassView = false;
