@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1051167403588-0hbpf13bgjv1v4jr5mp98751gmeb0ada.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1051167403588-0hbpf13bgjv1v4jr5mp98751gmeb0ada</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1051167403588-9ojh047hq84hchij8rpgr187er1ahtvn.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDVBipHCQ13w0GITxC9VWH1nHkQ6N_Ft3c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1051167403588</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.devankdelivery</string>
+	<key>PROJECT_ID</key>
+	<string>devank-delivery-75fb2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>devank-delivery-75fb2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1051167403588:ios:ee70310d2f49c00d2b1611</string>
+</dict>
+</plist>

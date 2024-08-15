@@ -1,0 +1,158 @@
+{
+  "project_info": {
+    "project_number": "1051167403588",
+    "project_id": "devank-delivery-75fb2",
+    "storage_bucket": "devank-delivery-75fb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051167403588:android:954adaa39d75f6f52b1611",
+        "android_client_info": {
+          "package_name": "com.devankdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051167403588-ps92krlv958ikscjc9n1qaoa2i407bfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devankdelivery",
+            "certificate_hash": "af6b955b19d315e73f3fedbddbba2e8b98aa6137"
+          }
+        },
+        {
+          "client_id": "1051167403588-q4m5h6i4rqsjbjh1om56ktdpj1adt1u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devankdelivery",
+            "certificate_hash": "3daa5dbe8bbcd8a1b364884e6ae4891f72e332d5"
+          }
+        },
+        {
+          "client_id": "1051167403588-neii7v2jn7n1qmhsbg7ikev2j0553m44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXbiwyLaG6dofbepul5MsLgS0SQt9GLec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051167403588-neii7v2jn7n1qmhsbg7ikev2j0553m44.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1051167403588-0hbpf13bgjv1v4jr5mp98751gmeb0ada.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devankdelivery"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051167403588:android:a64d75d1254708022b1611",
+        "android_client_info": {
+          "package_name": "com.devankdelivery.entregador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051167403588-9ojh047hq84hchij8rpgr187er1ahtvn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devankdelivery.entregador",
+            "certificate_hash": "3daa5dbe8bbcd8a1b364884e6ae4891f72e332d5"
+          }
+        },
+        {
+          "client_id": "1051167403588-fgp9jc1c2td074gvh9sci2d482mn0el7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devankdelivery.entregador",
+            "certificate_hash": "af6b955b19d315e73f3fedbddbba2e8b98aa6137"
+          }
+        },
+        {
+          "client_id": "1051167403588-neii7v2jn7n1qmhsbg7ikev2j0553m44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXbiwyLaG6dofbepul5MsLgS0SQt9GLec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051167403588-neii7v2jn7n1qmhsbg7ikev2j0553m44.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1051167403588-0hbpf13bgjv1v4jr5mp98751gmeb0ada.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devankdelivery"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051167403588:android:90ed533ced225f312b1611",
+        "android_client_info": {
+          "package_name": "com.devankdelivery.parceiros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051167403588-fpmu6gm3lefjvs2cn26rtsp4v0huupl7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devankdelivery.parceiros",
+            "certificate_hash": "3daa5dbe8bbcd8a1b364884e6ae4891f72e332d5"
+          }
+        },
+        {
+          "client_id": "1051167403588-neii7v2jn7n1qmhsbg7ikev2j0553m44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXbiwyLaG6dofbepul5MsLgS0SQt9GLec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051167403588-neii7v2jn7n1qmhsbg7ikev2j0553m44.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1051167403588-0hbpf13bgjv1v4jr5mp98751gmeb0ada.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devankdelivery"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
