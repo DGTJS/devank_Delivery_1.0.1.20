@@ -19,6 +19,79 @@ class ValidateCheck{
     }
     return null;
   }
+static String? validatePix(String? value) {
+    
+    final kEmailValid = value!.length > 3;
+    if (value!.isEmpty) {
+      return '\u26A0 ${'pix_field_is_required'.tr}';
+    } else if (kEmailValid == false) {
+      return '\u26A0 ${"enter_valid_pix".tr}';
+    }
+    return null;
+  }
+  static String? validateCpf(String? value) {
+    const pattern = r"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
+    final kCpfValid = RegExp(pattern);
+    bool isValid = kCpfValid.hasMatch(value.toString());
+    //regra de validação de CPF brasil
+    // Regra de validação de CPF Brasil
+    int sum = 0;
+    int remainder;
+    if (value == "000.000.000-00" ||
+      value == "111.111.111-11" ||
+      value == "222.222.222-22" ||
+      value == "333.333.333-33" ||
+      value == "444.444.444-44" ||
+      value == "555.555.555-55" ||
+      value == "666.666.666-66" ||
+      value == "777.777.777-77" ||
+      value == "888.888.888-88" ||
+      value == "999.999.999-99") {
+      return '\u26A0 ${"enter_valid_cpf".tr}';
+    }
+
+    List<int> numbers = value!.replaceAll(RegExp(r'\D'), '').split('').map((e) => int.parse(e)).toList();
+
+    for (int i = 0; i < 9; i++) {
+      sum += numbers[i] * (10 - i);
+    }
+    remainder = 11 - (sum % 11);
+    if (remainder == 10 || remainder == 11) {
+      remainder = 0;
+    }
+    if (remainder != numbers[9]) {
+      return '\u26A0 ${"enter_valid_cpf".tr}';
+    }
+
+    sum = 0;
+    for (int i = 0; i < 10; i++) {
+      sum += numbers[i] * (11 - i);
+    }
+    remainder = 11 - (sum % 11);
+    if (remainder == 10 || remainder == 11) {
+      remainder = 0;
+    }
+    if (remainder != numbers[10]) {
+      return '\u26A0 ${"enter_valid_cpf".tr}';
+    }if (value!.isEmpty) {
+      return '\u26A0 ${'cpf_field_is_required'.tr}';
+    } else if (isValid == false) {
+      return '\u26A0 ${"enter_valid_cpf".tr}';
+    }
+    return null;
+  }
+
+  static String? validateBirth(String? value) {
+    const pattern = r'^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(19|20)\d{2}$';
+    final kBirthValid = RegExp(pattern);
+    bool isValid = kBirthValid.hasMatch(value.toString());
+    if (value!.isEmpty) {
+      return '\u26A0 ${'birth_field_is_required'.tr}';
+    } else if (isValid == false) {
+      return '\u26A0 ${"enter_valid_birth".tr}';
+    }
+    return null;
+  }
 
   static String? validateEmptyText(String? value, String? message) {
     if (value == null || value.isEmpty) {

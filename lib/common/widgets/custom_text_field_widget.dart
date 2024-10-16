@@ -30,6 +30,7 @@ class CustomTextFieldWidget extends StatefulWidget {
   final TextAlign textAlign;
   final bool isAmount;
   final bool isNumber;
+  final bool isCustomMask;
   final bool showTitle;
   final bool showBorder;
   final double iconSize;
@@ -45,6 +46,7 @@ class CustomTextFieldWidget extends StatefulWidget {
   final double? levelTextSize;
   final bool fromUpdateProfile;
   final Widget? suffixChild;
+  final TextInputFormatter? maskFormatter;
 
   const CustomTextFieldWidget({
     super.key,
@@ -83,6 +85,8 @@ class CustomTextFieldWidget extends StatefulWidget {
     this.levelTextSize,
     this.fromUpdateProfile = false,
     this.suffixChild,
+    this.isCustomMask = false,
+    this.maskFormatter
   });
 
   @override
@@ -116,7 +120,7 @@ class CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
           autofocus: false,
           obscureText: widget.isPassword ? _obscureText : false,
           inputFormatters: widget.inputType == TextInputType.phone ? <TextInputFormatter>[FilteringTextInputFormatter.allow(RegExp('[0-9]'))]
-              : widget.isAmount ? [FilteringTextInputFormatter.allow(RegExp(r'\d'))] : widget.isNumber ? [FilteringTextInputFormatter.allow(RegExp(r'\d'))] : null,
+              : widget.isAmount ? [FilteringTextInputFormatter.allow(RegExp(r'\d'))] : widget.isNumber ? [FilteringTextInputFormatter.allow(RegExp(r'\d'))] : widget.isCustomMask && widget.maskFormatter != null ? [widget.maskFormatter!] : null,
           decoration: InputDecoration(
             errorMaxLines: 2,
             enabledBorder: OutlineInputBorder(

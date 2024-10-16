@@ -46,12 +46,18 @@ class _DeliveryManRegistrationScreenState extends State<DeliveryManRegistrationS
   final TextEditingController _lNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _cpfController = TextEditingController();
+  final TextEditingController _birthController = TextEditingController();
+  final TextEditingController _pixController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
   final TextEditingController _identityNumberController = TextEditingController();
   final FocusNode _fNameNode = FocusNode();
   final FocusNode _lNameNode = FocusNode();
   final FocusNode _emailNode = FocusNode();
+  final FocusNode _birthNode = FocusNode();
+  final FocusNode _cpfNode = FocusNode();
+  final FocusNode _pixNode = FocusNode();
   final FocusNode _phoneNode = FocusNode();
   final FocusNode _passwordNode = FocusNode();
   final FocusNode _confirmPasswordNode = FocusNode();
@@ -118,7 +124,9 @@ class _DeliveryManRegistrationScreenState extends State<DeliveryManRegistrationS
               phoneController: _phoneController, passwordController: _passwordController, confirmPasswordController: _confirmPasswordController,
               identityNumberController: _identityNumberController, fNameNode: _fNameNode, lNameNode: _lNameNode, emailNode: _emailNode,
               phoneNode: _phoneNode, passwordNode: _passwordNode, confirmPasswordNode: _confirmPasswordNode, identityNumberNode: _identityNumberNode,
-              buttonView: buttonView()) /*webView(deliverymanController, zoneIndexList, dmTypeList, zoneList, identityTypeList, vehicleList)*/
+              buttonView: buttonView(),birthController: _birthController, 
+              cpfController: _cpfController, pixController: _pixController, birthNode: _birthNode, cpfNode: _cpfNode, pixNode: _pixNode,
+              ) /*webView(deliverymanController, zoneIndexList, dmTypeList, zoneList, identityTypeList, vehicleList)*/
             : Column(children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeLarge, vertical:  Dimensions.paddingSizeSmall),

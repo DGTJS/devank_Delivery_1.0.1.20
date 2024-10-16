@@ -19,6 +19,7 @@ import 'package:stackfood_multivendor/common/widgets/custom_dropdown_widget.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class DeliverymanRegistrationWebScreen extends StatefulWidget {
   final DeliverymanRegistrationController deliverymanController;
@@ -31,6 +32,9 @@ class DeliverymanRegistrationWebScreen extends StatefulWidget {
   final TextEditingController fNameController;
   final TextEditingController lNameController;
   final TextEditingController emailController;
+  final TextEditingController cpfController;
+  final TextEditingController birthController;
+  final TextEditingController pixController;
   final TextEditingController phoneController;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
@@ -39,19 +43,46 @@ class DeliverymanRegistrationWebScreen extends StatefulWidget {
   final FocusNode lNameNode;
   final FocusNode emailNode;
   final FocusNode phoneNode;
+  final FocusNode birthNode;
+  final FocusNode cpfNode;
+  final FocusNode pixNode;
   final FocusNode passwordNode;
   final FocusNode confirmPasswordNode;
   final FocusNode identityNumberNode;
   final String? countryDialCode;
   final Widget buttonView;
   const DeliverymanRegistrationWebScreen({
-    super.key, required this.deliverymanController, required this.zoneIndexList, required this.typeList,
-    required this.zoneList, required this.identityTypeList, required this.vehicleList, required this.scrollController,
-    required this.fNameController, required this.lNameController, required this.emailController,
-    required this.phoneController, required this.passwordController, required this.confirmPasswordController,
-    required this.identityNumberController, required this.fNameNode, required this.lNameNode, required this.emailNode,
-    required this.phoneNode, required this.passwordNode, required this.confirmPasswordNode, required this.identityNumberNode,
-    this.countryDialCode, required this.buttonView,
+    super.key, 
+    required this.deliverymanController, 
+    required this.zoneIndexList, 
+    required this.typeList,
+    required this.zoneList, 
+    required this.identityTypeList, 
+    required this.vehicleList, 
+    required this.scrollController,
+    required this.fNameController, 
+    required this.lNameController, 
+    required this.emailController, 
+    required this.cpfController,
+     required this.birthController, 
+     required this.pixController,
+    required this.phoneController, 
+    required this.passwordController, 
+    required this.confirmPasswordController,
+    required this.identityNumberController, 
+    required this.fNameNode, 
+    required this.lNameNode, 
+    required this.emailNode,
+    required this.phoneNode, 
+    required this.birthNode, 
+    required this.cpfNode, 
+    required this.pixNode, 
+    required this.passwordNode, 
+    required this.confirmPasswordNode, 
+    required this.identityNumberNode,
+    this.countryDialCode, 
+    required this.buttonView,
+    
   });
 
   @override
@@ -168,19 +199,74 @@ class _DeliverymanRegistrationWebScreenState extends State<DeliverymanRegistrati
                                       validator: (value) => ValidateCheck.validatePhone(value, null),
                                     ),
                                   ),
+                                  
                                   const SizedBox(width: Dimensions.paddingSizeExtraOverLarge),
 
                                   Expanded(child:CustomTextFieldWidget(
                                     hintText: 'write_email'.tr,
                                     controller: widget.emailController,
                                     focusNode: widget.emailNode,
-                                    nextFocus: widget.passwordNode,
+                                    nextFocus: widget.birthNode,
                                     inputType: TextInputType.emailAddress,
                                     prefixIcon: CupertinoIcons.mail_solid,
                                     labelText: 'email'.tr,
                                     required: true,
                                     validator: (value) => ValidateCheck.validateEmail(value),
                                   )),
+                                ]),
+                   
+                                const SizedBox(height: Dimensions.paddingSizeExtraOverLarge),
+                                Row(children: [
+                                  Expanded(
+                                    child: CustomTextFieldWidget(
+                                      hintText: 'enter_birthday'.tr,
+                                      controller: widget.birthController,
+                                      focusNode: widget.birthNode,
+                                      nextFocus: widget.cpfNode,
+                                      inputType: TextInputType.number,
+                                      isCustomMask: true,
+                                      maskFormatter: new MaskTextInputFormatter(
+                                        mask: '##/##/####', 
+                                        filter: { "#": RegExp(r'[0-9]') },
+                                        type: MaskAutoCompletionType.lazy
+                                      ),
+                                      labelText: 'birthday'.tr,
+                                      required: true,
+                                      validator: (value) => ValidateCheck.validateBirth(value),
+                                    ),
+                                  ),
+                                  
+                                  const SizedBox(width: Dimensions.paddingSizeExtraOverLarge),
+
+                                  Expanded(child:CustomTextFieldWidget(
+                                    hintText: 'enter_cpf'.tr,
+                                    controller: widget.cpfController,
+                                    focusNode: widget.cpfNode,
+                                    nextFocus: widget.pixNode,
+                                    inputType: TextInputType.number,
+                                    prefixIcon: CupertinoIcons.doc_person,
+                                    labelText: 'enter_cpf'.tr,
+                                    required: true,
+                                    validator: (value) => ValidateCheck.validateCpf(value),
+                                  )),
+                                ]),
+                                const SizedBox(height: Dimensions.paddingSizeExtraOverLarge),
+                                Row(children: [
+                                  Expanded(
+                                    child: CustomTextFieldWidget(
+                                      hintText: 'enter_pix'.tr,
+                                      controller: widget.pixController,
+                                      focusNode: widget.pixNode,
+                                      nextFocus: widget.passwordNode,
+                                     
+                                      labelText: 'pix'.tr,
+                                      required: true,
+                                      validator: (value) => ValidateCheck.validatePix(value),
+                                    ),
+                                  ),
+                                  
+                                  
+                                  
                                 ]),
                                 const SizedBox(height: Dimensions.paddingSizeExtraOverLarge),
 

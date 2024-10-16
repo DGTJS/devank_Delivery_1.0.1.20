@@ -22,6 +22,7 @@ import 'package:stackfood_multivendor/common/widgets/custom_snackbar_widget.dart
 import 'package:stackfood_multivendor/common/widgets/custom_text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({super.key});
@@ -34,6 +35,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
   final FocusNode _firstNameFocus = FocusNode();
   final FocusNode _lastNameFocus = FocusNode();
   final FocusNode _emailFocus = FocusNode();
+  final FocusNode _birthFocus = FocusNode();
+  final FocusNode _cpfFocus = FocusNode();
   final FocusNode _phoneFocus = FocusNode();
   final FocusNode _passwordFocus = FocusNode();
   final FocusNode _confirmPasswordFocus = FocusNode();
@@ -41,6 +44,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _birthController = TextEditingController();
+  final TextEditingController _cpfController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
@@ -154,10 +159,53 @@ class SignUpWidgetState extends State<SignUpWidget> {
               required: true,
               controller: _emailController,
               focusNode: _emailFocus,
-              nextFocus: _passwordFocus,
+              nextFocus: _birthFocus,
               inputType: TextInputType.emailAddress,
               prefixIcon: CupertinoIcons.mail_solid,
               validator: (value) => ValidateCheck.validateEmail(value),
+              divider: false,
+            ) : const SizedBox(),
+            const SizedBox(height: Dimensions.paddingSizeLarge),
+
+            !ResponsiveHelper.isDesktop(context) ? CustomTextFieldWidget(
+              labelText: 'cpf'.tr,
+              hintText: 'enter_cpf'.tr,
+              showLabelText: true,
+              required: true,
+              controller: _cpfController,
+              focusNode: _cpfFocus,
+              nextFocus: _birthFocus,
+              inputType: TextInputType.number,
+              prefixIcon: CupertinoIcons.doc_person,
+              validator: (value) => ValidateCheck.validateCpf(value),
+              isCustomMask: true,
+              maskFormatter: new MaskTextInputFormatter(
+                mask: '###.###.###-##', 
+                filter: { "#": RegExp(r'[0-9]') },
+                type: MaskAutoCompletionType.lazy
+              ),
+              divider: false,
+            ) : const SizedBox(),
+            SizedBox(height: !ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeLarge : 0),
+         
+
+            !ResponsiveHelper.isDesktop(context) ? CustomTextFieldWidget(
+              labelText: 'birthday'.tr,
+              hintText: 'enter_birthday'.tr,
+              showLabelText: true,
+              required: true,
+              controller: _birthController,
+              focusNode: _birthFocus,
+              nextFocus: _passwordFocus,
+              inputType: TextInputType.datetime,
+              prefixIcon: CupertinoIcons.calendar,
+              validator: (value) => ValidateCheck.validateBirth(value),
+              isCustomMask: true,
+              maskFormatter: new MaskTextInputFormatter(
+                mask: '##/##/####', 
+                filter: { "#": RegExp(r'[0-9]') },
+                type: MaskAutoCompletionType.lazy
+              ),
               divider: false,
             ) : const SizedBox(),
             SizedBox(height: !ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeLarge : 0),
