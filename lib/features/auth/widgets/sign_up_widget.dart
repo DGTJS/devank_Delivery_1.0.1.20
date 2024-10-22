@@ -369,6 +369,9 @@ class SignUpWidgetState extends State<SignUpWidget> {
     String email = _emailController.text.trim();
     String number = _phoneController.text.trim();
     String password = _passwordController.text.trim();
+    String birth = _birthController.text.trim();
+    String cpf = _cpfController.text.trim();
+
     String confirmPassword = _confirmPasswordController.text.trim();
     String referCode = _referCodeController.text.trim();
 
@@ -389,6 +392,10 @@ class SignUpWidgetState extends State<SignUpWidget> {
         showCustomSnackBar('enter_phone_number'.tr);
       } else if (!phoneValid.isValid) {
         showCustomSnackBar('invalid_phone_number'.tr);
+      } else if (cpf.isEmpty){
+        showCustomSnackBar('enter_cpf'.tr);
+      } else if (birth.isEmpty){
+        showCustomSnackBar('enter_birthday'.tr);
       } else if (password.isEmpty) {
         showCustomSnackBar('enter_password'.tr);
       } else if (password.length < 8) {
@@ -405,6 +412,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
           phone: numberWithCountryCode,
           password: password,
           refCode: referCode,
+          cpf: cpf,
+          birth: birth
         );
         return signUpBody;
       }
