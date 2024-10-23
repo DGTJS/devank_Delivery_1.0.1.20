@@ -152,6 +152,55 @@ class SignUpWidgetState extends State<SignUpWidget> {
             ]),
             const SizedBox(height: Dimensions.paddingSizeLarge),
 
+            Row(children: [
+              ResponsiveHelper.isDesktop(context) ? Expanded(
+                child: CustomTextFieldWidget(
+                labelText: 'cpf'.tr,
+                hintText: 'enter_cpf'.tr,
+                showLabelText: true,
+                required: true,
+                controller: _cpfController,
+                focusNode: _cpfFocus,
+                nextFocus: _birthFocus,
+                inputType: TextInputType.number,
+                prefixIcon: CupertinoIcons.doc_person,
+                validator: (value) => ValidateCheck.validateCpf(value),
+                isCustomMask: true,
+                maskFormatter: new MaskTextInputFormatter(
+                  mask: '###.###.###-##', 
+                  filter: { "#": RegExp(r'[0-9]') },
+                  type: MaskAutoCompletionType.lazy
+                ),
+                divider: false,
+              ),
+              ) : const SizedBox(),
+              SizedBox(width: ResponsiveHelper.isDesktop(context) ? Dimensions.paddingSizeSmall : 0),
+
+              Expanded(
+                child: CustomTextFieldWidget(
+              labelText: 'birthday'.tr,
+              hintText: 'enter_birthday'.tr,
+              showLabelText: true,
+              required: true,
+              controller: _birthController,
+              focusNode: _birthFocus,
+              nextFocus: _passwordFocus,
+              inputType: TextInputType.datetime,
+              prefixIcon: CupertinoIcons.calendar,
+              validator: (value) => ValidateCheck.validateBirth(value),
+              isCustomMask: true,
+              maskFormatter: new MaskTextInputFormatter(
+                mask: '##/##/####', 
+                filter: { "#": RegExp(r'[0-9]') },
+                type: MaskAutoCompletionType.lazy
+              ),
+              divider: false,
+            ),
+              ),
+
+            ]),
+            const SizedBox(height: Dimensions.paddingSizeLarge),
+
             !ResponsiveHelper.isDesktop(context) ? CustomTextFieldWidget(
               labelText: 'email'.tr,
               hintText: 'enter_email'.tr,
